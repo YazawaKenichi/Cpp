@@ -11,8 +11,8 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    adrobo = int(argv[1]);
-    switch(adrobo)
+    Pref = int(argv[1]);
+    switch(Pref)
     {
         case TOKYO:
             cout << "There is Tokyo!" << endl;
