@@ -1,7 +1,7 @@
-#include <C:\Users\tonfa\Documents\CPP\header-practice\enu_header.h>
-#include <C:\Users\tonfa\Documents\CPP\header-practice\enu_header.h>
-#include <C:\Users\tonfa\Documents\CPP\header-practice\enu_header.h>
-#include <C:\Users\tonfa\Documents\CPP\header-practice\enu_header.h>
+#include <C:\Users\user\Documents\CPP\header-practice\enu_header.h>
+#include <C:\Users\user\Documents\CPP\header-practice\enu_header.h>
+#include <C:\Users\user\Documents\CPP\header-practice\enu_header.h>
+#include <C:\Users\user\Documents\CPP\header-practice\enu_header.h>
 //自作ヘッダファイルのインクルードに成功！
 //ヘッダファイル内の #ifndef の動作確認用に複数回重複してインクルードしてみる。
 #include <iostream>
@@ -14,14 +14,14 @@ int main(int argc, char *argv[])
     adrobo = int(argv[1]);
     switch(adrobo)
     {
-        case KASAI:
-            cout << "I'm Kasai!" << endl;
+        case TOKYO:
+            cout << "There is Tokyo!" << endl;
             break;
-        case KASHIWAGI:
-            cout << "Oh! What's!? Why are my computer broken?" << endl; //g++ でコンパイルすると日本語が出力できないみたい。仕方なく英語で出力するしかない。
+        case Kanagawa:
+            cout << "There is Kanagawa!" << endl; //g++ でコンパイルすると日本語が出力できないみたい。仕方なく英語で出力するしかない。
             break;
-        case KACHI:
-            cout << "I don't like this source cord written by fujie professor!" << endl;
+        case Chiba:
+            cout << "There is Chiba!" << endl;
             break;
         default:
             #ifndef YONEDA  //YONEDA が定義されていないとき
