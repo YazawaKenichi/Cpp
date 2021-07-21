@@ -17,10 +17,10 @@ int main(int argc, char *argv[])
         case TOKYO:
             cout << "There is Tokyo!" << endl;
             break;
-        case Kanagawa:
+        case KANAGAWA:
             cout << "There is Kanagawa!" << endl; //g++ でコンパイルすると日本語が出力できないみたい。仕方なく英語で出力するしかない。
             break;
-        case Chiba:
+        case CHIBA:
             cout << "There is Chiba!" << endl;
             break;
         default:
