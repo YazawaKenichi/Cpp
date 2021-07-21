@@ -1,7 +1,7 @@
 #ifndef ENU_HEADER_H    //ENU_HEADER_H が定義されていないとき
 #define ENU_HEADER_H    //ENU_HEADER_H を定義する
 
-enum Pref_ //未ロボ学生の列挙体を定義する
+enum Pref_ //関東圏の列挙体を定義する
 {
     TOKYO,
     KANAGAWA,
