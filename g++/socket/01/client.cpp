@@ -1,0 +1,48 @@
+#include <iostream>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <string.h>
+
+using namespace std;
+
+int main()
+{
+    int sockfd = socket(AF_INET, SOCK_STREAM, 0);   // アドレスドメイン、ソケットタイプ、プロトコル
+    if(sockfd < 0)
+    {
+        // エラーのとき
+        std::cout << "Error socket:" << strerror(errno);   // 標準出力
+        exit(1);    // 異常終了
+    }
+
+    // アドレスの生成
+    struct sockaddr_in addr;    // 接続先の情報用の構造体（IP_v4）
+    memset(&addr, 0, sizeof(struct sockaddr_in));    // memset で初期化
+    addr.sin_family = AF_INET;  // アドレスファミリ（IP_v4）
+    addr.sin_port = htons(1234);    // ポート番号、htons 関数は 16bit ホストバイトオーダーをネットワークバイトオーダーに変換
+    addr.sin_addr.s_addr = inet_addr("127.0.0.1");  // IP アドレス、inet_addr 関数はアドレスの翻訳
+
+    // ソケット接続要求
+    connect(sockfd, (struct sockaddr *)&addr, sizeof(struct sockaddr_in));  // ソケット、アドレスポインタ、アドレスサイズ
+
+    // データ送信
+    char s_str[] = "Hello, World!"; // 送信データ格納
+    send(sockfd, s_str, 12, 0);   // 送信
+    std::cout << s_str << std::endl;  // 標準出力
+
+    // データ受信
+    char r_str[12]; // 受信データ格納
+    recv(sockfd, r_str, 12, 0); // 受信
+    std::cout << r_str << std::endl;  // 標準出力
+
+    // ソケットクローズ
+    close(sockfd);
+
+    return 0;
+}
+
+// https://tora-k.com/2019/08/27/socket-c/
+
+
